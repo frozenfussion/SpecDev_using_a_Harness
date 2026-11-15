@@ -1,0 +1,11 @@
+flowchart TB
+    PR[Project] --> E1[Epic: Stage 1]
+    PR --> E2[Epic: Stage 2]
+    PR --> E3[Epic: Documentation]
+    E2 --> T1[Task: write the Stage 2 spec]
+    E2 --> T2[Task: spec review and fixes]
+    E2 --> T3[Task: Part A, build]
+    E2 --> T4[Task: Part B, build]
+    E2 --> T5[Task: review, fixes, re-review]
+    E2 --> T6[Task: merge, deploy, owner's test, accept, tag]
+    E2 --> T7[Task: user guide and status file]

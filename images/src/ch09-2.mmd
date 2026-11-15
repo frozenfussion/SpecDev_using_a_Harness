@@ -1,0 +1,7 @@
+flowchart LR
+    EV[Something happens:<br/>work starts, work ends,<br/>the plan changes] --> L[Session log line]
+    EV --> T[Move the ticket<br/>and comment it]
+    EV --> D{A decision?}
+    D -- yes --> DE[Decisions file]
+    L --> SHOW[End of the piece of work:<br/>tell the owner which tickets moved]
+    T --> SHOW

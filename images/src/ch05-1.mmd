@@ -1,0 +1,6 @@
+flowchart TB
+    W[Check every tile] --> Q{Anything<br/>changed?}
+    Q -- no --> S[Say nothing.<br/>Schedule the next check]
+    Q -- yes --> A["Act on it<br/>A question: answer it, or take it to the owner<br/>Waiting for approval: tell the owner which tile and key<br/>Finished: read the report, start the review<br/>Going wrong: stop it, and say why"]
+    A --> S
+    S --> W

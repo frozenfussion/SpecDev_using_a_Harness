@@ -1,0 +1,17 @@
+flowchart TB
+    subgraph P["Per Part, before the merge"]
+        direction LR
+        P1[Formatter and linter]
+        P2[Build]
+        P3[Its own tests]
+        P4[Static checks on its<br/>scripts and manifests]
+    end
+    subgraph S["Whole stage, after the merge"]
+        direction LR
+        S1[Everything above again,<br/>on a clean copy]
+        S2[Build the real artefact]
+        S3[Deploy]
+        S4[The stage check script]
+        S5[Restart and check again]
+    end
+    P --> S

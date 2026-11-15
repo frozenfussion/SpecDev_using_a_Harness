@@ -1,0 +1,10 @@
+flowchart TB
+    subgraph LOGS["Working logs (private is fine)"]
+        SL[SESSION_LOG.md<br/>what happened, when] ~~~ DE[DECISIONS.md<br/>what was agreed, and why]
+        OQ[OPEN_QUESTIONS.md<br/>what blocks work] ~~~ JO[JOURNAL.md<br/>mistakes, corrections, lessons]
+    end
+    subgraph REPO["In the product repo (public if the repo is)"]
+        ST[STATUS.md<br/>what is built, checked and open] ~~~ SPC[The specs' change tables<br/>what changed during each build]
+    end
+    LOGS --> HO[HANDOVER files<br/>the bridge to the next session]
+    REPO --> HO
