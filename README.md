@@ -18,32 +18,7 @@ You need to be comfortable with git and a terminal. You do not need to know the 
 
 ## The idea in one picture
 
-```mermaid
-flowchart TB
-    O([Owner: decides, tests, accepts])
-    P[Planner AI<br/>writes the spec, splits it into Parts,<br/>keeps the logs and the status file]
-    SR{Spec review<br/>by a different AI}
-    B1[Builder AI: Part A<br/>own branch, own files]
-    B2[Builder AI: Part B<br/>own branch, own files]
-    CR{Code review<br/>against the spec}
-    T[Owner runs the Done-when checks]
-    A([Accepted: tag, merge, status updated])
-
-    O -- says what is wanted --> P
-    P --> SR
-    SR -- findings --> P
-    SR -- clean --> O
-    O -- go --> B1
-    O -- go --> B2
-    B1 -- report --> CR
-    B2 -- report --> CR
-    CR -- findings --> B1
-    CR -- findings --> B2
-    CR -- clean --> T
-    T -- fails --> P
-    T -- passes --> A
-    A -- next stage --> P
-```
+![The loop: the owner decides, a planner AI writes the spec, a different AI reviews it, builder AIs each build one Part, a reviewer checks each Part against the spec, and the owner runs the checks and accepts.](images/the-loop.png)
 
 Four ideas hold it together:
 
