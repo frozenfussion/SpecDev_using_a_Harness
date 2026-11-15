@@ -25,19 +25,7 @@ None of these is solved by a cleverer prompt. They are solved by structure: writ
 
 ## 1.2 The four roles
 
-```mermaid
-flowchart LR
-    O([Owner<br/>a human])
-    P[Planner<br/>an AI]
-    B[Builders<br/>one AI per Part]
-    R[Reviewer<br/>a different AI]
-    O <--> P
-    P -- spec --> B
-    B -- report --> R
-    R -- findings --> B
-    R -- result --> O
-    P -- spec --> R
-```
+<p align="center"><img src="../images/ch01-1.png" alt="Diagram: The four roles" width="820"></p>
 
 | Role | Does | Never does |
 |---|---|---|
@@ -71,33 +59,7 @@ You do not need these exact tools. You need four roles and at least two differen
 
 Everything that passes from one role to another is a file in the repo or a fixed-format message. Nothing important lives only in a conversation.
 
-```mermaid
-flowchart TB
-    subgraph W["Written once, read by everyone"]
-        GR[Global rules file]
-        AG[AGENTS file<br/>pointer for each tool]
-    end
-    subgraph S["One per stage"]
-        SP[Stage spec]
-        RV1[Spec review findings]
-        RP[Builder report, one per Part]
-        RV2[Code review findings]
-        FX[Fix request with the planner's decisions]
-    end
-    subgraph K["Kept up to date all the time"]
-        ST[Status file]
-        LG[Logs: sessions, decisions]
-        HO[Handover for the next session]
-        TK[Ticket board]
-    end
-    GR --> SP
-    SP --> RV1 --> SP
-    SP --> RP --> RV2 --> FX --> RP
-    RV2 --> ST
-    ST --> HO
-    LG --> HO
-    SP --> TK
-```
+<p align="center"><img src="../images/ch01-2.png" alt="Diagram: What moves between the roles" width="641"></p>
 
 | Artefact | Written by | Read by | Chapter |
 |---|---|---|---|
@@ -119,33 +81,7 @@ flowchart TB
 
 One stage goes through these steps. The next stage starts again at the top.
 
-```mermaid
-sequenceDiagram
-    participant O as Owner
-    participant P as Planner
-    participant R as Reviewer
-    participant B as Builders
-    O->>P: What I want next, and my decisions
-    P->>P: Write the stage spec
-    P->>R: Review this spec
-    R-->>P: Findings
-    P->>P: Fix the spec, record the changes
-    P->>O: Spec is ready. Go?
-    O->>P: Go
-    P->>B: One Part each, from the same base commit
-    B-->>P: Report per Part
-    P->>R: Review each Part against the spec
-    R-->>P: Findings
-    P->>B: Fix request, with my decisions on each finding
-    B-->>P: Fixed
-    P->>R: Review again
-    R-->>P: Clean
-    B->>B: Merge the Parts, run every check on a clean copy
-    O->>O: Deploy and run the Done-when checks
-    O->>P: Accepted
-    B->>B: Commit "accepted", merge to main, tag
-    P->>P: Update status, logs, tickets, handover
-```
+<p align="center"><img src="../images/ch01-3.png" alt="Diagram: The loop, step by step" width="820"></p>
 
 | Step | What happens | What it produces |
 |---|---|---|

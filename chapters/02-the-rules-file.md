@@ -11,15 +11,7 @@ If you take only one thing from this repo, take this file. Most of the trouble p
 
 ## 2.1 Two files, and why
 
-```mermaid
-flowchart LR
-    T1[Tool 1 starts] --> A1[AGENTS.md<br/>read automatically]
-    T2[Tool 2 starts] --> A2[CLAUDE.md<br/>read automatically]
-    A1 --> G[docs/specs/00-GLOBAL-RULES.md<br/>the real rules, one copy]
-    A2 --> G
-    G --> S[The current stage spec]
-    S --> ST[docs/STATUS.md]
-```
+<p align="center"><img src="../images/ch02-1.png" alt="Diagram: Two files, and why" width="820"></p>
 
 Each AI coding tool reads a file with a fixed name when it starts in a folder. The names differ by tool (`AGENTS.md` for some, `CLAUDE.md` for another, and others). You do not want your rules written three times in three files that drift apart.
 
@@ -237,17 +229,7 @@ This section is the one copied word for word into every tool's start file, so it
 
 ## 2.11 How to write your own, in an hour
 
-```mermaid
-flowchart TB
-    A[Copy the template] --> B[Fill in roles<br/>and the never list]
-    B --> C[List the decisions<br/>already made]
-    C --> D[Draw the folder tree]
-    D --> E[Add code rules<br/>you can check]
-    E --> F[Write the flow<br/>and the names]
-    F --> G[Keep the report format,<br/>checklist and<br/>talk-to-me rules]
-    G --> H[Owner reads it<br/>and agrees]
-    H --> I[Point every tool's<br/>start file at it]
-```
+<p align="center"><img src="../images/ch02-2.png" alt="Diagram: How to write your own, in an hour" width="258"></p>
 
 1. **Copy the template** into `docs/specs/00-GLOBAL-RULES.md`.
 2. **Roles.** Fill the table. Adjust the "never" list to your environment: what is privileged, what is shared, what cannot be undone?

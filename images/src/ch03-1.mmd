@@ -1,0 +1,12 @@
+flowchart TB
+    A[Owner talks:<br/>ideas, decisions] --> B[Planner AI<br/>writes the spec]
+    B --> C{Spec review<br/>by a different AI}
+    C -- findings --> B
+    C -- clean --> D[Owner says go]
+    D --> E[Builder AIs<br/>one per Part]
+    E --> F{Code review<br/>against the spec}
+    F -- findings --> E
+    F -- clean --> G[Owner runs<br/>the Done-when checks]
+    G -- fails --> H[Fix, and write the change<br/>into the spec]
+    H --> E
+    G -- passes --> I[Accepted:<br/>tag and merge]

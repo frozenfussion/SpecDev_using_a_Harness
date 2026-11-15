@@ -26,19 +26,7 @@ And one thing it must **not** become: a second source of truth. The spec is the 
 
 Keep the shape of the board identical to the shape of the work.
 
-```mermaid
-flowchart TB
-    PR[Project] --> E1[Epic: Stage 1]
-    PR --> E2[Epic: Stage 2]
-    PR --> E3[Epic: Documentation]
-    E2 --> T1[Task: write the Stage 2 spec]
-    E2 --> T2[Task: spec review and fixes]
-    E2 --> T3[Task: Part A, build]
-    E2 --> T4[Task: Part B, build]
-    E2 --> T5[Task: review, fixes, re-review]
-    E2 --> T6[Task: merge, deploy, owner's test, accept, tag]
-    E2 --> T7[Task: user guide and status file]
-```
+<p align="center"><img src="../images/ch09-1.png" alt="Diagram: The mapping" width="820"></p>
 
 | In the method | On the board |
 |---|---|
@@ -107,15 +95,7 @@ and, added later:
 
 Updating tickets by hand is the chore that kills every board. The planner AI is already writing the logs in every turn. Give it access to the tracker and make the board part of the same motion.
 
-```mermaid
-flowchart LR
-    EV[Something happens:<br/>work starts, work ends,<br/>the plan changes] --> L[Session log line]
-    EV --> T[Move the ticket<br/>and comment it]
-    EV --> D{A decision?}
-    D -- yes --> DE[Decisions file]
-    L --> SHOW[End of the piece of work:<br/>tell the owner which tickets moved]
-    T --> SHOW
-```
+<p align="center"><img src="../images/ch09-2.png" alt="Diagram: Let the planner keep the board" width="820"></p>
 
 How the planner reaches the tracker depends on your tools: a connector or integration if your AI tool has one, the tracker's command-line tool, or its API. If none of those can do a particular thing, a browser session the owner is signed in to is the fallback. The owner types passwords; the planner never sees them.
 

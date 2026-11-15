@@ -24,26 +24,7 @@ The logging system is the project's memory. It is a small set of plain text file
 
 ## 7.2 The files, and the one job each has
 
-```mermaid
-flowchart TB
-    subgraph REPO["In the product repo (public if the repo is)"]
-        ST[STATUS.md<br/>what is built, checked and open]
-        SPC[The specs' change tables<br/>what changed during each build]
-    end
-    subgraph LOGS["Working logs (private is fine)"]
-        SL[SESSION_LOG.md<br/>what happened, when]
-        DE[DECISIONS.md<br/>what was agreed, and why]
-        OQ[OPEN_QUESTIONS.md<br/>what blocks work]
-        JO[JOURNAL.md<br/>mistakes, corrections, lessons]
-        HO[HANDOVER files<br/>the bridge to the next session]
-    end
-    SL --> HO
-    DE --> HO
-    OQ --> HO
-    JO --> HO
-    ST --> HO
-    DE --> SPC
-```
+<p align="center"><img src="../images/ch07-1.png" alt="Diagram: The files, and the one job each has" width="820"></p>
 
 | File | Its one job | Shape | Who writes it, when |
 |---|---|---|---|
@@ -228,14 +209,7 @@ Notice that two of the three are about the *planner's* mistakes. A journal that 
 
 **From lesson to rule.** A lesson that could recur becomes a line in the rules, with the date. That is how a rules file improves:
 
-```mermaid
-flowchart LR
-    A[Something goes wrong] --> B[Journal entry:<br/>what happened, the lesson]
-    B --> C{Could it happen again?}
-    C -- yes --> D[New line in the rules file<br/>or standing instructions]
-    D --> E[New item on the<br/>review checklist]
-    C -- no --> F[Leave it in the journal]
-```
+<p align="center"><img src="../images/ch07-2.png" alt="Diagram: The journal: mistakes and lessons" width="820"></p>
 
 ---
 

@@ -1,0 +1,13 @@
+flowchart TB
+    BASE[(Base commit<br/>tag stage-N-base)]
+    BASE --> A[Part A<br/>branch stage-N-part-a<br/>its own folder on disk]
+    BASE --> B[Part B<br/>branch stage-N-part-b<br/>its own folder on disk]
+    BASE --> C[Part C<br/>branch stage-N-part-c<br/>its own folder on disk]
+    A --> RA{Review A}
+    B --> RB{Review B}
+    C --> RC{Review C}
+    RA --> M[Merge into stage-N<br/>no conflicts, because<br/>no file is in two lists]
+    RB --> M
+    RC --> M
+    M --> CHK[Run every check again<br/>on a clean copy]
+    CHK --> OWN([Owner tests])

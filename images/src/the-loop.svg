@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1640" width="1200" height="1640" font-family="Liberation Sans, Arial, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0b1f14"/></marker>
+<marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b7791f"/></marker></defs>
+<rect width="1200" height="1640" fill="#ffffff"/>
+<rect x="320.0" y="40" width="560" height="84" rx="42.0" fill="#0b1f14" stroke="#0b1f14" stroke-width="3"/>
+<text x="600" y="76.0" text-anchor="middle" font-size="27" font-weight="700" fill="#ffffff">Owner (a human)</text>
+<text x="600" y="106.0" text-anchor="middle" font-size="20" fill="#c9f5dc">says what is wanted, and decides</text>
+<path d="M600 124 V168" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<rect x="320.0" y="172" width="560" height="96" rx="14" fill="#ffffff" stroke="#0b1f14" stroke-width="3"/>
+<text x="600" y="214.0" text-anchor="middle" font-size="27" font-weight="700" fill="#0b1f14">Planner AI</text>
+<text x="600" y="244.0" text-anchor="middle" font-size="20" fill="#4a5a52">writes the spec and splits it into Parts</text>
+<path d="M600 268 V312" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<rect x="320.0" y="316" width="560" height="96" rx="14" fill="#fff8e6" stroke="#b7791f" stroke-width="3"/>
+<text x="600" y="358.0" text-anchor="middle" font-size="27" font-weight="700" fill="#0b1f14">Spec review</text>
+<text x="600" y="388.0" text-anchor="middle" font-size="20" fill="#4a5a52">by a different AI: findings only</text>
+<path d="M880 364 H1010 V220 H886" fill="none" stroke="#b7791f" stroke-width="3" stroke-dasharray="9 8" marker-end="url(#ab)"/>
+<text x="1022" y="284" font-size="20" font-style="italic" fill="#b7791f" text-anchor="start">findings:</text><text x="1022" y="310" font-size="20" font-style="italic" fill="#b7791f" text-anchor="start">fix the spec</text>
+<path d="M600 412 V456" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<rect x="320.0" y="460" width="560" height="84" rx="42.0" fill="#0b1f14" stroke="#0b1f14" stroke-width="3"/>
+<text x="600" y="511.0" text-anchor="middle" font-size="27" font-weight="700" fill="#ffffff">Owner says go</text>
+<path d="M470 544 V600 H330 V640" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M730 544 V600 H870 V640" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<rect x="110.0" y="644" width="440" height="96" rx="14" fill="#ffffff" stroke="#0b1f14" stroke-width="3"/>
+<text x="330" y="686.0" text-anchor="middle" font-size="27" font-weight="700" fill="#0b1f14">Builder AI: Part A</text>
+<text x="330" y="716.0" text-anchor="middle" font-size="20" fill="#4a5a52">own branch, own list of files</text>
+<rect x="650.0" y="644" width="440" height="96" rx="14" fill="#ffffff" stroke="#0b1f14" stroke-width="3"/>
+<text x="870" y="686.0" text-anchor="middle" font-size="27" font-weight="700" fill="#0b1f14">Builder AI: Part B</text>
+<text x="870" y="716.0" text-anchor="middle" font-size="20" fill="#4a5a52">own branch, own list of files</text>
+<text x="600" y="630" text-anchor="middle" font-size="20" font-style="italic" fill="#4a5a52">at the same time</text>
+<path d="M330 740 V790 H520 V836" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<text x="345" y="778" font-size="20" font-style="italic" fill="#0b1f14" text-anchor="start">report</text>
+<path d="M870 740 V790 H680 V836" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<text x="855" y="778" font-size="20" font-style="italic" fill="#0b1f14" text-anchor="end">report</text>
+<rect x="320.0" y="840" width="560" height="96" rx="14" fill="#fff8e6" stroke="#b7791f" stroke-width="3"/>
+<text x="600" y="882.0" text-anchor="middle" font-size="27" font-weight="700" fill="#0b1f14">Code review against the spec</text>
+<text x="600" y="912.0" text-anchor="middle" font-size="20" fill="#4a5a52">by a different AI: findings only</text>
+<path d="M880 888 H1140 V692 H1096" fill="none" stroke="#b7791f" stroke-width="3" stroke-dasharray="9 8" marker-end="url(#ab)"/>
+<text x="1012" y="870" font-size="20" font-style="italic" fill="#b7791f" text-anchor="end">findings: fix</text>
+<path d="M600 936 V980" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<text x="614" y="966" font-size="20" font-style="italic" fill="#0b1f14" text-anchor="start">clean</text>
+<rect x="320.0" y="984" width="560" height="84" rx="14" fill="#ffffff" stroke="#0b1f14" stroke-width="3"/>
+<text x="600" y="1020.0" text-anchor="middle" font-size="27" font-weight="700" fill="#0b1f14">Merge the Parts</text>
+<text x="600" y="1050.0" text-anchor="middle" font-size="20" fill="#4a5a52">every check again on a clean copy</text>
+<path d="M600 1068 V1112" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<rect x="320.0" y="1116" width="560" height="96" rx="48.0" fill="#0b1f14" stroke="#0b1f14" stroke-width="3"/>
+<text x="600" y="1158.0" text-anchor="middle" font-size="27" font-weight="700" fill="#ffffff">Owner runs the Done-when checks</text>
+<text x="600" y="1188.0" text-anchor="middle" font-size="20" fill="#c9f5dc">on the real thing</text>
+<path d="M320 1164 H70 V220 H314" fill="none" stroke="#b7791f" stroke-width="3" stroke-dasharray="9 8" marker-end="url(#ab)"/>
+<text x="88" y="1106" font-size="20" font-style="italic" fill="#b7791f" text-anchor="start">fails: fix, and record</text><text x="88" y="1132" font-size="20" font-style="italic" fill="#b7791f" text-anchor="start">the change in the spec</text>
+<path d="M600 1212 V1256" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<text x="614" y="1242" font-size="20" font-style="italic" fill="#0b1f14" text-anchor="start">passes</text>
+<rect x="320.0" y="1260" width="560" height="96" rx="48.0" fill="#0a8f4d" stroke="#0a8f4d" stroke-width="3"/>
+<text x="600" y="1302.0" text-anchor="middle" font-size="27" font-weight="700" fill="#ffffff">Accepted</text>
+<text x="600" y="1332.0" text-anchor="middle" font-size="20" fill="#c9f5dc">tag, merge to main, update the status file</text>
+<path d="M600 1356 V1400" fill="none" stroke="#0b1f14" stroke-width="3" marker-end="url(#ar)"/>
+<rect x="320.0" y="1404" width="560" height="96" rx="14" fill="#ffffff" stroke="#0b1f14" stroke-width="3"/>
+<text x="600" y="1446.0" text-anchor="middle" font-size="27" font-weight="700" fill="#0b1f14">Logs, tickets and handover updated</text>
+<text x="600" y="1476.0" text-anchor="middle" font-size="20" fill="#4a5a52">so the next session starts cold and loses nothing</text>
+<text x="600" y="1560" text-anchor="middle" font-size="22" fill="#4a5a52">Then the next stage starts again at the top.</text>
+<text x="600" y="1600" text-anchor="middle" font-size="18" fill="#7a8a82">SpecDev using a Harness · Faysal Aziz</text></svg>

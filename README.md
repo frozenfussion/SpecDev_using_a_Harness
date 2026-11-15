@@ -18,7 +18,7 @@ You need to be comfortable with git and a terminal. You do not need to know the 
 
 ## The idea in one picture
 
-![The loop: the owner decides, a planner AI writes the spec, a different AI reviews it, builder AIs each build one Part, a reviewer checks each Part against the spec, and the owner runs the checks and accepts.](images/the-loop.png)
+<p align="center"><img src="images/the-loop.png" alt="The loop: the owner decides, a planner AI writes the spec, a different AI reviews it, builder AIs each build one Part, a reviewer checks each Part against the spec, and the owner runs the checks and accepts." width="720"></p>
 
 Four ideas hold it together:
 

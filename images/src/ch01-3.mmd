@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant O as Owner
+    participant P as Planner
+    participant R as Reviewer
+    participant B as Builders
+    O->>P: What I want next, and my decisions
+    P->>P: Write the stage spec
+    P->>R: Review this spec
+    R-->>P: Findings
+    P->>P: Fix the spec, record the changes
+    P->>O: Spec is ready. Go?
+    O->>P: Go
+    P->>B: One Part each, from the same base commit
+    B-->>P: Report per Part
+    P->>R: Review each Part against the spec
+    R-->>P: Findings
+    P->>B: Fix request, with my decisions on each finding
+    B-->>P: Fixed
+    P->>R: Review again
+    R-->>P: Clean
+    B->>B: Merge the Parts, run every check on a clean copy
+    O->>O: Deploy and run the Done-when checks
+    O->>P: Accepted
+    B->>B: Commit "accepted", merge to main, tag
+    P->>P: Update status, logs, tickets, handover

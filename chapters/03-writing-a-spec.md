@@ -15,20 +15,7 @@ This chapter shows how I write one. Every section has two halves:
 
 The spec is the hand-over point between thinking and building. Everything before it is conversation. Everything after it is checked against it.
 
-```mermaid
-flowchart TB
-    A[Owner talks:<br/>ideas, decisions] --> B[Planner AI<br/>writes the spec]
-    B --> C{Spec review<br/>by a different AI}
-    C -- findings --> B
-    C -- clean --> D[Owner says go]
-    D --> E[Builder AIs<br/>one per Part]
-    E --> F{Code review<br/>against the spec}
-    F -- findings --> E
-    F -- clean --> G[Owner runs<br/>the Done-when checks]
-    G -- fails --> H[Fix, and write the change<br/>into the spec]
-    H --> E
-    G -- passes --> I[Accepted:<br/>tag and merge]
-```
+<p align="center"><img src="../images/ch03-1.png" alt="Diagram: Where the spec sits" width="491"></p>
 
 Three things to notice:
 
@@ -49,14 +36,7 @@ A spec has four readers, and each one needs something different from it.
 | **The owner** (you) | Commands to run and the result that means "it works" | You judge by feeling, or by reading code you did not write |
 | **The next session** (you or an AI, weeks later) | Why each decision was made, and what changed during the build | Decisions get re-argued, and old mistakes come back |
 
-```mermaid
-flowchart TB
-    S[The spec]
-    S --> B[Builder reads:<br/>Purpose, Decisions, Parts,<br/>Fixed names, Do-not-touch]
-    S --> R[Reviewer reads:<br/>Done when, Decisions,<br/>Out of scope]
-    S --> O[Owner reads:<br/>Owner's words, Done when,<br/>Prerequisites, Pre-mortem]
-    S --> N[Next session reads:<br/>Owner's words, Decisions,<br/>Changes during the build]
-```
+<p align="center"><img src="../images/ch03-2.png" alt="Diagram: Who reads a spec" width="820"></p>
 
 Write every sentence so that at least one of these four can use it. A sentence none of them can act on does not belong in a spec.
 
@@ -425,18 +405,7 @@ That third row is the kind of mistake this whole section exists for. The spec wa
 
 You do not write a spec from top to bottom.
 
-```mermaid
-flowchart TB
-    A[1. Owner's words<br/>collect what was actually decided] --> B[2. Purpose<br/>one paragraph]
-    B --> C[3. Done when<br/>the checks, as exactly as you can]
-    C --> D[4. Out of scope<br/>draw the fence]
-    D --> E[5. Decisions, data, interfaces<br/>everything the checks need]
-    E --> F[6. Parts and fixed names<br/>who builds which files]
-    F --> G[7. Prerequisites, docs,<br/>do-not-touch]
-    G --> H[8. Pre-mortem and Unverified<br/>be honest]
-    H --> I[9. Spec review<br/>by a different AI]
-    I --> J[10. Fold the findings in<br/>and record them in section 14]
-```
+<p align="center"><img src="../images/ch03-3.png" alt="Diagram: The order to write it in" width="341"></p>
 
 **Done when comes third, straight after the purpose.** If you cannot write the checks, you do not yet know what you are building, and no amount of design detail will hide that.
 

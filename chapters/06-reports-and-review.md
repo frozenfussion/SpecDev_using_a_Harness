@@ -9,20 +9,7 @@ A builder says "done". This chapter is about what happens between that word and 
 
 ## 6.1 The cycle
 
-```mermaid
-flowchart TB
-    B[Builder finishes its Part] --> RP[Report<br/>seven fixed headings]
-    RP --> RV{Reviewer<br/>fresh session, different AI}
-    RV --> F[Findings<br/>file, line, what is wrong,<br/>what the spec says]
-    F --> PD[Planner decides each finding:<br/>fix / change the spec /<br/>accept with a reason / reject]
-    PD --> FX[Fix request to the builder]
-    PD --> SC[Spec change table updated]
-    FX --> B2[Builder fixes on the same branch]
-    B2 --> RR{Re-review<br/>the fixes AND what they touched}
-    RR -- new findings --> PD
-    RR -- clean --> M[Merge the Parts]
-    M --> O([Owner runs the Done-when checks])
-```
+<p align="center"><img src="../images/ch06-1.png" alt="Diagram: The cycle" width="705"></p>
 
 Each arrow is a document. That is what lets you stop at any point, come back tomorrow, and know exactly where things stand.
 

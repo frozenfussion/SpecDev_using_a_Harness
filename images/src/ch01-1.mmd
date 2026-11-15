@@ -1,0 +1,11 @@
+flowchart LR
+    O([Owner<br/>a human])
+    P[Planner<br/>an AI]
+    B[Builders<br/>one AI per Part]
+    R[Reviewer<br/>a different AI]
+    O <--> P
+    P -- spec --> B
+    B -- report --> R
+    R -- findings --> B
+    R -- result --> O
+    P -- spec --> R

@@ -1,0 +1,20 @@
+flowchart TB
+    subgraph W["Written once, read by everyone"]
+        direction LR
+        GR[Global rules file] --- AG[AGENTS file:<br/>a pointer for each tool]
+    end
+    subgraph S["One per stage"]
+        direction TB
+        SP[Stage spec] --> RV1[Spec review findings]
+        SP --> RP[Builder report,<br/>one per Part]
+        RP --> RV2[Code review findings]
+        RV2 --> FX[Fix request with the<br/>planner's decisions]
+    end
+    subgraph K["Kept up to date all the time"]
+        direction TB
+        ST[Status file] --> HO[Handover for<br/>the next session]
+        LG[Logs: sessions,<br/>decisions] --> HO
+        TK[Ticket board] --> HO
+    end
+    W --> S
+    S --> K

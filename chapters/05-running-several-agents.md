@@ -247,20 +247,7 @@ tmux send-keys -t work:work.0 Enter             # Send it.
 
 Several agents can run for an hour. You do not have to watch every line, but nobody may be left waiting.
 
-```mermaid
-flowchart LR
-    W[Check every tile] --> Q{Anything changed?}
-    Q -- no --> S[Say nothing.<br/>Schedule the next check]
-    Q -- "an agent asks a question" --> A1[Answer it, or<br/>take it to the owner]
-    Q -- "an agent waits for approval" --> A2[Tell the owner:<br/>which tile, which key]
-    Q -- "an agent has finished" --> A3[Read the report.<br/>Start the review]
-    Q -- "an agent is going wrong" --> A4[Stop it. Say why]
-    A1 --> S
-    A2 --> S
-    A3 --> S
-    A4 --> S
-    S --> W
-```
+<p align="center"><img src="../images/ch05-1.png" alt="Diagram: Watching without staring" width="581"></p>
 
 What to look for in a tile:
 

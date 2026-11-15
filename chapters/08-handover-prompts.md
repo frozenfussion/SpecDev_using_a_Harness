@@ -11,16 +11,7 @@ A **handover** is the file the outgoing session writes so the incoming one can s
 
 ## 8.1 The idea
 
-```mermaid
-flowchart LR
-    S1[Session 7<br/>context nearly full] -- writes --> H[HANDOVER-007.md<br/>where things stand,<br/>what is next, how to work]
-    S1 -- writes --> P[HANDOVER-007-PROMPT.md<br/>the message that starts session 8]
-    O([Owner]) -- pastes the prompt --> S2[Session 8<br/>knows nothing]
-    S2 -- reads --> H
-    S2 -- then reads --> R[The rules, the specs,<br/>the status file, all the logs]
-    S2 -- confirms in a few lines --> O
-    O -- "go" --> S2
-```
+<p align="center"><img src="../images/ch08-1.png" alt="Diagram: The idea" width="435"></p>
 
 Three things are true of a good handover:
 

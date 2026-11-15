@@ -15,21 +15,7 @@ Everything else in this chapter exists to make that rule possible and to prove i
 
 Why files, and not "areas" or "features"? Because a file list can be checked by a machine. `git diff --name-only` against the base commit gives the files a Part touched. Compare that with the list in the spec. A Part described as "the back end" cannot be checked that way.
 
-```mermaid
-flowchart TB
-    BASE[(Base commit<br/>tag stage-N-base)]
-    BASE --> A[Part A<br/>branch stage-N-part-a<br/>its own folder on disk]
-    BASE --> B[Part B<br/>branch stage-N-part-b<br/>its own folder on disk]
-    BASE --> C[Part C<br/>branch stage-N-part-c<br/>its own folder on disk]
-    A --> RA{Review A}
-    B --> RB{Review B}
-    C --> RC{Review C}
-    RA --> M[Merge into stage-N<br/>no conflicts, because<br/>no file is in two lists]
-    RB --> M
-    RC --> M
-    M --> CHK[Run every check again<br/>on a clean copy]
-    CHK --> OWN([Owner tests])
-```
+<p align="center"><img src="../images/ch04-1.png" alt="Diagram: The one rule" width="802"></p>
 
 ---
 
@@ -160,25 +146,7 @@ This is the trap. If Part A's finish line needs Part B's work, then Part A can n
 
 **The rule.** Give each Part checks it can pass with only its own files: build, format, lint, unit tests, static checks on its manifests and scripts. Put everything that needs the whole stage together into the stage's own "Done when", which runs after the merge.
 
-```mermaid
-flowchart TB
-    subgraph P["Per Part, before the merge"]
-        direction LR
-        P1[Formatter and linter]
-        P2[Build]
-        P3[Its own tests]
-        P4[Static checks on its<br/>scripts and manifests]
-    end
-    subgraph S["Whole stage, after the merge"]
-        direction LR
-        S1[Everything above again,<br/>on a clean copy]
-        S2[Build the real artefact]
-        S3[Deploy]
-        S4[The stage check script]
-        S5[Restart and check again]
-    end
-    P --> S
-```
+<p align="center"><img src="../images/ch04-2.png" alt="Diagram: A done when each Part can pass alone" width="342"></p>
 
 **The real example of getting it wrong.** The first version of the Stage 1 spec asked Part B (getting it running) to finish with a live deployment. But the image could only be built from Part A's code, and Part A was on another branch. Nobody saw it in two spec reviews. It surfaced when Builder B asked the planner for Part A's image tag. The fix is recorded in the spec's change table:
 

@@ -1,0 +1,7 @@
+flowchart LR
+    T1[Tool 1 starts] --> A1[AGENTS.md<br/>read automatically]
+    T2[Tool 2 starts] --> A2[CLAUDE.md<br/>read automatically]
+    A1 --> G[docs/specs/00-GLOBAL-RULES.md<br/>the real rules, one copy]
+    A2 --> G
+    G --> S[The current stage spec]
+    S --> ST[docs/STATUS.md]

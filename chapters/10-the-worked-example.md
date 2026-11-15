@@ -17,14 +17,7 @@ You do not need to understand its tech stack to follow this chapter. Read it for
 
 ## 10.1 The whole build on one line
 
-```mermaid
-flowchart LR
-    S0["Stage 0<br/>Foundation<br/>9 Nov<br/>tag spine-v0.0"] --> S1["Stage 1<br/>Control Centre<br/>9 Nov<br/>tag spine-v0.1"]
-    S1 --> S2["Stage 2<br/>Talk to AI<br/>10 Nov<br/>tag spine-v0.2"]
-    S2 --> S3["Stage 3<br/>Skills, consumers,<br/>routing<br/>12 Nov<br/>tag spine-v0.3"]
-    S3 --> S4["Stage 4 phase 1<br/>Tracing and<br/>failure demos<br/>12 Nov<br/>tag class-start"]
-    S4 --> S5["Stage 4 phase 2<br/>The same system<br/>on managed cloud<br/>14 Nov<br/>tag eks-ready"]
-```
+<p align="center"><img src="../images/ch10-1.png" alt="Diagram: The whole build on one line" width="820"></p>
 
 | Stage | What existed afterwards | Builders in parallel | Spec review findings | Live checks at acceptance |
 |---|---|---|---|---|
@@ -235,19 +228,7 @@ A rules file that has not changed during a real build was either perfect or unre
 
 You do not need a cluster to practise the method. Pick something you could build in an afternoon.
 
-```mermaid
-flowchart TB
-    A[1. Copy the templates<br/>into a new repo] --> B[2. Fill in the rules file<br/>chapter 2]
-    B --> C[3. Write one stage spec<br/>chapter 3]
-    C --> D[4. New session:<br/>review the spec]
-    D --> E[5. Fix it. Record the changes]
-    E --> F[6. New session:<br/>build it, on a branch]
-    F --> G[7. New session:<br/>review against the spec]
-    G --> H[8. Decide each finding.<br/>Fix. Re-review]
-    H --> I[9. Run the Done-when<br/>checks yourself]
-    I --> J[10. Accept: merge, tag,<br/>write the status entry]
-    J --> K[11. Write a handover.<br/>Start stage 2 from it]
-```
+<p align="center"><img src="../images/ch10-2.png" alt="Diagram: Try it yourself, small" width="302"></p>
 
 A good first project has: one small service or command-line tool, one stored thing, one check script. For the second stage, split into two Parts and run two builders in two tmux tiles (chapters 4 and 5).
 
