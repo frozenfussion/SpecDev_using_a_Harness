@@ -45,8 +45,15 @@ Four ideas hold it together:
 ## Start here
 
 - **Thirty minutes:** read chapters 1 and 3.
+- **Step by step:** follow the [instruction manual](manual/00.%20SpecDev-using-a-Harness-Instruction-Manual.pdf).
 - **A first try on your own project:** copy [`templates/`](templates/) into your repo, fill in the rules file (chapter 2), write one small spec (chapter 3), and build it with one builder and one reviewer.
 - **Ready for more:** add a second builder (chapters 4 and 5), then the logs and handovers (chapters 7 and 8).
+
+## The instruction manual
+
+A hand-holding, step-by-step path through the method, with real screenshots: 22 steps from the blank templates to one stage built, reviewed, accepted and tagged.
+
+[00. SpecDev using a Harness: Instruction Manual (PDF)](manual/00.%20SpecDev-using-a-Harness-Instruction-Manual.pdf)
 
 ## The templates
 
